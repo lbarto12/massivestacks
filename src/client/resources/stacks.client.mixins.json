@@ -3,7 +3,10 @@
 	"package": "lbarto12.stacks.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin"
+		"ExampleClientMixin",
+        "ItemStackMixin",
+        "SlotMixin",
+        "ItemStackCodecMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
