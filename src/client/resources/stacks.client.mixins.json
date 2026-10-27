@@ -6,7 +6,7 @@
 		"ExampleClientMixin",
         "ItemStackMixin",
         "SlotMixin",
-        "InventoryMixin",
+        "ContainerMixin",
         "ItemStackCodecMixin"
 	],
 	"injectors": {
