@@ -7,6 +7,7 @@
         "ItemStackMixin",
         "SlotMixin",
         "ContainerMixin",
+        "GUIGraphicsMixin",
         "ItemStackCodecMixin"
 	],
 	"injectors": {
