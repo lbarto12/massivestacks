@@ -26,7 +26,7 @@ public abstract class GUIGraphicsMixin {
     public abstract void text(Font font, String text, int x, int y, int color, boolean shadow);
 
     @Inject(at = @At("HEAD"), method = "itemCount(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V", cancellable = true)
-    private void stacks$drawScaledCount(Font font, ItemStack itemStack, int x, int y, @Nullable String countText,
+    private void massivestacks$drawScaledCount(Font font, ItemStack itemStack, int x, int y, @Nullable String countText,
             CallbackInfo ci) {
         if (countText != null || itemStack.getCount() < 1_000) {
             return;

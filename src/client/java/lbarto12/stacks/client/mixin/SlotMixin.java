@@ -11,7 +11,7 @@ import net.minecraft.world.inventory.Slot;
 @Mixin(Slot.class)
 public abstract class SlotMixin {
     @Inject(at = @At("RETURN"), method = "getMaxStackSize()I", cancellable = true)
-    private void stacks$raiseSlotMax(CallbackInfoReturnable<Integer> cir) {
+    private void massivestacks$raiseSlotMax(CallbackInfoReturnable<Integer> cir) {
         if (cir.getReturnValue() >= 64) {
             cir.setReturnValue(StackConfig.MAX_STACK);
         }

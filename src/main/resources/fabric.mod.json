@@ -1,18 +1,18 @@
 {
 	"schemaVersion": 1,
-	"id": "stacks",
+	"id": "massivestacks",
 	"version": "${version}",
 	"name": "stacks",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod to increase the maximum stack size to 1 billion items per slot.",
 	"authors": [
-		"Me!"
+		"lbarto12"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/stacks/icon.png",
+	"icon": "assets/massivestacks/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,9 +23,9 @@
 		]
 	},
 	"mixins": [
-		"stacks.mixins.json",
+		"massivestacks.mixins.json",
 		{
-			"config": "stacks.client.mixins.json",
+			"config": "massivestacks.client.mixins.json",
 			"environment": "client"
 		}
 	],

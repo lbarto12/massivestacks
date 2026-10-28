@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ItemInstance.class)
 public interface ItemInstanceMixin {
     @Inject(method = "getMaxStackSize()I", at = @At("RETURN"), cancellable = true)
-    private void stacks$raiseMaxStackSize(CallbackInfoReturnable<Integer> cir) {
+    private void massivestacks$raiseMaxStackSize(CallbackInfoReturnable<Integer> cir) {
         if (cir.getReturnValue() > 1) {
             cir.setReturnValue(StackConfig.MAX_STACK);
         }
