@@ -3,7 +3,6 @@
 	"package": "lbarto12.stacks.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin",
         "ItemInstanceMixin",
         "SlotMixin",
         "ContainerMixin",
