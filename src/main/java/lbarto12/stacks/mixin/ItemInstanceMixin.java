@@ -1,4 +1,4 @@
-package lbarto12.stacks.client.mixin;
+package lbarto12.stacks.mixin;
 
 import lbarto12.stacks.StackConfig;
 import net.minecraft.world.item.ItemInstance;

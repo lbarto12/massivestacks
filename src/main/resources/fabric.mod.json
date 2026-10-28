@@ -23,6 +23,7 @@
 		]
 	},
 	"mixins": [
+		"massivestacks.mixins.json",
 		{
 			"config": "massivestacks.client.mixins.json",
 			"environment": "client"
