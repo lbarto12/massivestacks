@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import lbarto12.stacks.CountFormatter;
 import net.minecraft.world.item.component.ItemContainerContents;
 
+// E.g. when viewing the tooltip for a shulker box
 @Mixin(ItemContainerContents.class)
 public abstract class ItemContainerContentsMixin {
     @ModifyArg(at = @At(value = "INVOKE", target = "Lnet/minecraft/network/chat/Component;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/network/chat/MutableComponent;"), method = "addToTooltip", index = 1)
