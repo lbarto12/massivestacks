@@ -14,7 +14,9 @@
 	"license": "CC0-1.0",
 	"icon": "assets/massivestacks/icon.png",
 	"environment": "*",
-	"entrypoints": {},
+	"entrypoints": {
+        "main": ["lbarto12.stacks.MassiveStacks"]
+    },
 	"mixins": [
 		"massivestacks.mixins.json",
 		{
