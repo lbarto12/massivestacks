@@ -12,8 +12,6 @@ import net.minecraft.world.Container;
 public interface ContainerMixin {
     @Inject(at = @At("RETURN"), method = "getMaxStackSize()I", cancellable = true)
     private void massivestacks$raiseContainerMax(CallbackInfoReturnable<Integer> cir) {
-        if (cir.getReturnValue() >= 64) {
-            cir.setReturnValue(StackConfig.MAX_STACK);
-        }
+        cir.setReturnValue(StackConfig.MAX_STACK);
     }
 }

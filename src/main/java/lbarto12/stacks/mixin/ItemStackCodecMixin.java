@@ -12,6 +12,6 @@ import net.minecraft.world.item.ItemStackTemplate;
 public abstract class ItemStackCodecMixin {
     @ModifyArg(method = "*", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/ExtraCodecs;intRange(II)Lcom/mojang/serialization/Codec;"), index = 1)
     private static int massivestacks$widenCountCodec(int max) {
-        return max == 99 ? StackConfig.MAX_STACK : max;
+        return StackConfig.MAX_STACK;
     }
 }
