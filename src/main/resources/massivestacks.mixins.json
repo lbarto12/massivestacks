@@ -5,6 +5,7 @@
 	"mixins": [
 		"AnvilMenuMixin",
 		"ContainerMixin",
+		"ItemCombinerMenuMixin",
 		"ItemInstanceMixin",
 		"ItemStackCodecMixin",
         "ItemContainerContentsMixin",
