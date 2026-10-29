@@ -15,7 +15,8 @@
 	"icon": "assets/massivestacks/icon.png",
 	"environment": "*",
 	"entrypoints": {
-        "main": ["lbarto12.stacks.MassiveStacks"]
+        "main": ["lbarto12.stacks.MassiveStacks"],
+        "client": ["lbarto12.stacks.client.MassiveStacksClient"]
     },
 	"mixins": [
 		"massivestacks.mixins.json",
