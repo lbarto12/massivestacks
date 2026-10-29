@@ -41,7 +41,7 @@ public abstract class AbstractContainerScreenMixin<T extends AbstractContainerMe
                 && this.hoveredSlot.hasItem()
                 && this.menu.getCarried().isEmpty()) {
             this.minecraft.setScreenAndShow(new TakeAmountScreen(this, this.menu.containerId, this.hoveredSlot.index,
-                    this.hoveredSlot.getItem().getCount()));
+                    this.hoveredSlot.getItem().copy()));
             cir.setReturnValue(true);
         }
     }
