@@ -1,16 +1,16 @@
 package lbarto12.stacks;
 
-import java.text.DecimalFormat;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public final class CountFormatter {
+    private static final int MAX_DIGITS = 3;
 
     private static String calc(int count, int div, String suffix) {
-        final float result = (float) count / div;
-        DecimalFormat format = new DecimalFormat("0.##");
-        String s = format.format(result);
-        s = (s.length() - (s.contains(".") ? 1 : 0)) > 3 ? s.substring(0, 3) : s;
-        s = s.endsWith(".") ? s.replace(".", "") : s;
-        return s + suffix;
+        int decimals = Math.max(0, MAX_DIGITS - Integer.toString(count / div).length());
+        BigDecimal scaled = BigDecimal.valueOf(count).divide(BigDecimal.valueOf(div)).setScale(decimals,
+                RoundingMode.DOWN);
+        return scaled.stripTrailingZeros().toPlainString() + suffix;
     }
 
     public static String format(int count) {
