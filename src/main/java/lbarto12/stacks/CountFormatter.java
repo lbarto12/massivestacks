@@ -1,4 +1,4 @@
-package lbarto12.stacks.client;
+package lbarto12.stacks;
 
 public final class CountFormatter {
     public static String format(int count) {
