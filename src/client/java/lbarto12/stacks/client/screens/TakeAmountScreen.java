@@ -1,5 +1,6 @@
 package lbarto12.stacks.client.screens;
 
+import lbarto12.stacks.client.mixin.AbstractContainerScreenAccessor;
 import lbarto12.stacks.controls.TakeAmountPayload;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -168,6 +169,9 @@ public class TakeAmountScreen extends Screen {
 
     @Override
     public void onClose() {
+        if (this.parent instanceof AbstractContainerScreenAccessor accessor) {
+            accessor.massivestacks$setSkipNextRelease(true);
+        }
         this.minecraft.setScreenAndShow(this.parent);
     }
 
