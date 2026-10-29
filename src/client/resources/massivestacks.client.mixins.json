@@ -3,7 +3,8 @@
 	"package": "lbarto12.stacks.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"GUIGraphicsMixin"
+		"GUIGraphicsMixin",
+        "AbstractContainerScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
