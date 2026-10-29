@@ -6,6 +6,7 @@
 		"ContainerMixin",
 		"ItemInstanceMixin",
 		"ItemStackCodecMixin",
+        "ItemContainerContentsMixin",
 		"SlotMixin"
 	],
 	"injectors": {
