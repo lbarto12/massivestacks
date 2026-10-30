@@ -16,7 +16,8 @@
 	"environment": "*",
 	"entrypoints": {
         "main": ["lbarto12.stacks.MassiveStacks"],
-        "client": ["lbarto12.stacks.client.MassiveStacksClient"]
+        "client": ["lbarto12.stacks.client.MassiveStacksClient"],
+        "modmenu": ["lbarto12.stacks.client.screens.ModMenuIntegration"]
     },
 	"mixins": [
 		"massivestacks.mixins.json",
