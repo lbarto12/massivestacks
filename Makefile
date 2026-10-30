@@ -1,7 +1,10 @@
-.PHONY: run server
+.PHONY: client server build
 
-run:
+client:
 	./gradlew runClient
 
 server:
 	./gradlew runServer
+
+build:
+	./gradlew clean build
