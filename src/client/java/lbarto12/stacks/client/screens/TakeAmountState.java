@@ -22,10 +22,6 @@ public final class TakeAmountState {
         this.amount = Mth.clamp(amount, 0, this.max);
     }
 
-    public void setFromText(String digits) {
-        this.set(digits.isEmpty() ? 0 : (int) Math.min(Long.parseLong(digits), this.max));
-    }
-
     // log scale
     public void setFromSliderFraction(double fraction) {
         this.set((int) Math.round(Math.pow(this.max, fraction)));

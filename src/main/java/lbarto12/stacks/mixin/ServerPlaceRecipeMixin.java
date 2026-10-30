@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 
-import lbarto12.stacks.StackConfig;
+import lbarto12.stacks.config.StackLimit;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
@@ -18,7 +18,7 @@ public abstract class ServerPlaceRecipeMixin {
     private static Object massivestacks$raisedMaxStack(DataComponentMap components, DataComponentType<?> type,
             Object fallback, Operation<Object> original) {
         if (components.get(DataComponents.MAX_DAMAGE) == null) {
-            return StackConfig.MAX_STACK;
+            return StackLimit.get();
         }
         return original.call(components, type, fallback);
     }

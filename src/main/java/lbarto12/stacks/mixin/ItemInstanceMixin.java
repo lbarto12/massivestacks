@@ -1,6 +1,6 @@
 package lbarto12.stacks.mixin;
 
-import lbarto12.stacks.StackConfig;
+import lbarto12.stacks.config.StackLimit;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ItemInstance;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,7 +13,7 @@ public interface ItemInstanceMixin {
     @Inject(method = "getMaxStackSize()I", at = @At("RETURN"), cancellable = true)
     private void massivestacks$raiseMaxStackSize(CallbackInfoReturnable<Integer> cir) {
         if (((ItemInstance) (Object) this).get(DataComponents.MAX_DAMAGE) == null) {
-            cir.setReturnValue(StackConfig.MAX_STACK);
+            cir.setReturnValue(StackLimit.get());
         }
     }
 }

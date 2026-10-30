@@ -3,6 +3,7 @@ package lbarto12.stacks.crafting;
 import java.util.Optional;
 
 import lbarto12.stacks.StackConfig;
+import lbarto12.stacks.config.StackLimit;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,7 +42,7 @@ public final class BatchCraft {
         }
 
         NonNullList<ItemStack> remaining = recipe.get().value().getRemainingItems(input);
-        int crafts = countCrafts(craftSlots, positioned, remaining, StackConfig.MAX_STACK / perCraft.getCount());
+        int crafts = countCrafts(craftSlots, positioned, remaining, StackLimit.get() / perCraft.getCount());
         ItemStack crafted = perCraft.copyWithCount(perCraft.getCount() * crafts);
 
         crafted.onCraftedBy(player, crafted.getCount());

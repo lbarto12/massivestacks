@@ -62,12 +62,11 @@ public class TakeAmountScreen extends Screen {
 
         this.amountField = new EditBox(this.font, x, this.top + FIELD_Y, innerWidth, ROW_HEIGHT,
                 Component.literal("amount"));
-        this.amountField.setMaxLength(String.valueOf(this.state.max()).length());
         this.amountField.setHint(Component.literal("max: " + this.state.max()));
         if (this.state.amount() > 0) {
             this.amountField.setValue(Integer.toString(this.state.amount()));
         }
-        this.amountField.setResponder(this::onFieldChanged);
+        DigitField.bind(this.amountField, this.state.max(), this::onAmountChanged);
         this.addRenderableWidget(this.amountField);
         this.setInitialFocus(this.amountField);
 
@@ -96,15 +95,8 @@ public class TakeAmountScreen extends Screen {
         button.active = amount <= this.state.max();
     }
 
-    private void onFieldChanged(String text) {
-        String digits = text.replaceAll("[^0-9]", "");
-        this.state.setFromText(digits);
-        String normalized = digits.isEmpty() ? "" : Integer.toString(this.state.amount());
-        if (!normalized.equals(text)) {
-            this.amountField.setValue(normalized);
-            return;
-        }
-
+    private void onAmountChanged(int amount) {
+        this.state.set(amount);
         this.slider.sync();
         this.takeButton.active = this.state.amount() > 0;
     }

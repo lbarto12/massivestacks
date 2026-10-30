@@ -3,6 +3,8 @@ package lbarto12.stacks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lbarto12.stacks.config.ConfigFile;
+import lbarto12.stacks.config.StackLimit;
 import lbarto12.stacks.controls.HandshakePayload;
 import lbarto12.stacks.controls.TakeAmountHandler;
 import lbarto12.stacks.controls.TakeAmountPayload;
@@ -19,6 +21,8 @@ public class MassiveStacks implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        StackLimit.setLocal(ConfigFile.load().maxStackSize);
+
         PayloadTypeRegistry.clientboundConfiguration().register(HandshakePayload.PACKET_TYPE, HandshakePayload.CODEC);
         PayloadTypeRegistry.serverboundPlay().register(TakeAmountPayload.PACKET_TYPE, TakeAmountPayload.CODEC);
 
@@ -29,7 +33,9 @@ public class MassiveStacks implements ModInitializer {
         ServerConfigurationConnectionEvents.CONFIGURE.register((handler, server) -> {
             if (!ServerConfigurationNetworking.canSend(handler, HandshakePayload.PACKET_TYPE)) {
                 handler.disconnect(Component.literal("Massive Stacks must be installed on game client"));
+                return;
             }
+            ServerConfigurationNetworking.send(handler, new HandshakePayload(StackLimit.local()));
         });
     }
 

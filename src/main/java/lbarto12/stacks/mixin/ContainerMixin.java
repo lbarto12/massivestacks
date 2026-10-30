@@ -5,13 +5,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import lbarto12.stacks.StackConfig;
+import lbarto12.stacks.config.StackLimit;
 import net.minecraft.world.Container;
 
 @Mixin(Container.class)
 public interface ContainerMixin {
     @Inject(at = @At("RETURN"), method = "getMaxStackSize()I", cancellable = true)
     private void massivestacks$raiseContainerMax(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(StackConfig.MAX_STACK);
+        cir.setReturnValue(StackLimit.get());
     }
 }
