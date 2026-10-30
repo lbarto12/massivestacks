@@ -3,7 +3,7 @@
 	"id": "massivestacks",
 	"version": "${version}",
 	"name": "Massive Stacks",
-	"description": "A mod to increase the maximum stack size to 1 billion items per slot.",
+	"description": "Configurable item stack sizes, default 999 and up to one billion per slot. Adds exact-amount splitting, batch crafting and readable stack counts. Required on both server and client. Requires Fabric API; Mod Menu is optional for the settings screen.",
 	"authors": [
 		"lbarto12"
 	],
