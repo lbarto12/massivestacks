@@ -13,7 +13,8 @@
         "ItemContainerContentsMixin",
         "ItemStackTooltipMixin",
 		"SlotMixin",
-        "ComparatorSignalMixin"
+        "ComparatorSignalMixin",
+        "StackedContentsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
