@@ -5,7 +5,11 @@ import net.minecraft.world.item.ItemStack;
 
 public final class OriginalStackSize {
     public static boolean isUnstackable(ItemStack stack) {
-        return stack.getOrDefault(DataComponents.MAX_STACK_SIZE, 1) == 1;
+        return of(stack) == 1;
+    }
+
+    public static int of(ItemStack stack) {
+        return stack.getOrDefault(DataComponents.MAX_STACK_SIZE, 1);
     }
 
     private OriginalStackSize() {
