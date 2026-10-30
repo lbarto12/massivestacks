@@ -14,7 +14,8 @@
         "ItemStackTooltipMixin",
 		"SlotMixin",
         "ComparatorSignalMixin",
-        "StackedContentsMixin"
+        "StackedContentsMixin",
+        "ServerPlaceRecipeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
